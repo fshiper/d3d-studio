@@ -1,0 +1,10 @@
+@tailwind base;
+body {
+  @apply bg-gray-100;
+}
+h2 {
+  @apply text-2xl;
+}
+
+@tailwind components;
+@tailwind utilities;
