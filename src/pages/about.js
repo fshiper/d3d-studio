@@ -6,6 +6,7 @@ const AboutPage = () => (
   <Layout>
     <SEO title="About" />
     <h2>About</h2>
+    <img src="https://source.unsplash.com/random/250x250" alt="" />
     <p>
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       Lorem Ipsum has been the industry's standard dummy text ever since the

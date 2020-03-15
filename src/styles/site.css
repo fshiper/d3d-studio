@@ -4,6 +4,10 @@ body {
 }
 h2 {
   @apply text-2xl;
+  @apply pb-4;
+}
+p {
+  @apply leading-relaxed;
 }
 
 @tailwind components;

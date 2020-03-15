@@ -17,6 +17,7 @@ const ShowcasePage = () => (
       publishing software like Aldus PageMaker including versions of Lorem
       Ipsum.
     </p>
+    <img src="https://source.unsplash.com/random/250x250" alt="" />
   </Layout>
 )
 

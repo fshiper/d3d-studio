@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme")
+
 module.exports = {
   theme: {
     screens: {
@@ -13,7 +15,11 @@ module.exports = {
       xl: "960px",
       // => @media (min-width: 960px) { ... }
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Aleo", ...defaultTheme.fontFamily.sans],
+      },
+    },
   },
   variants: {},
   plugins: [],
