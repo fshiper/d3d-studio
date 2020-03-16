@@ -1,3 +1,4 @@
+const plugin = require("tailwindcss/plugin")
 const defaultTheme = require("tailwindcss/defaultTheme")
 
 module.exports = {
@@ -17,10 +18,14 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["Aleo", ...defaultTheme.fontFamily.sans],
+        sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
       },
     },
   },
   variants: {},
-  plugins: [],
+  plugins: [
+    plugin(function({ addUtilities, addComponents, e, prefix, config }) {
+      // Add your custom styles here
+    }),
+  ],
 }
