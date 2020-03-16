@@ -7,11 +7,11 @@ const Header = ({ siteTitle }) => {
   const [isExpanded, toggleExpansion] = useState(false)
 
   return (
-    <header className="bg-gray-200 shadow-lg pt-6 pb-4">
+    <header className="bg-gradient-gray-light shadow-md pt-2 pb-1">
       <nav className="flex container w-11/12 items-center justify-between flex-wrap  mx-auto">
         <div className="flex items-center flex-shrink-0 text-gray-700 mr-6">
           <Link to="/" href="#responsive-header">
-            <span className="font-semibold text-2xl tracking-tight">
+            <span className="font-semibold text-lg tracking-tight">
               {siteTitle}
             </span>
           </Link>
@@ -19,7 +19,7 @@ const Header = ({ siteTitle }) => {
         <div className="block lg:hidden">
           <button
             onClick={() => toggleExpansion(!isExpanded)}
-            className="flex items-center px-3 py-2 border rounded text-gray-700 bg-gray-600 hover:text-gray-700 hover:border-gray-100"
+            className="flex items-center px-3 py-2 border border-gray-700 rounded text-gray-700 bg-gray-200 transition duration-500 ease-in-out hover:text-gray-400 hover:border-gray-400"
           >
             <svg
               className="fill-current h-3 w-3"
@@ -36,7 +36,7 @@ const Header = ({ siteTitle }) => {
             isExpanded ? `block` : `hidden`
           } w-full block flex-grow lg:flex lg:items-center lg:w-auto`}
         >
-          <div className="lg:flex lg:text-lg lg:flex-grow justify-end">
+          <div className="lg:flex lg:text-md lg:flex-grow justify-end">
             <ListLink to="/interiors/">Interiors</ListLink>
             <ListLink to="/architecture/">Architecture</ListLink>
             <ListLink to="/about/">About</ListLink>
