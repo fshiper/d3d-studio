@@ -7,9 +7,9 @@ const Header = ({ siteTitle }) => {
   const [isExpanded, toggleExpansion] = useState(false)
 
   return (
-    <header className="bg-gray-600 shadow-lg pt-6 pb-2">
-      <nav className="flex items-center justify-between flex-wrap container mx-auto w-5/6">
-        <div className="flex items-center flex-shrink-0 text-gray-100 mr-6">
+    <header className="bg-gray-200 shadow-lg pt-6 pb-4">
+      <nav className="flex container w-11/12 items-center justify-between flex-wrap  mx-auto">
+        <div className="flex items-center flex-shrink-0 text-gray-700 mr-6">
           <Link to="/" href="#responsive-header">
             <span className="font-semibold text-2xl tracking-tight">
               {siteTitle}
@@ -19,7 +19,7 @@ const Header = ({ siteTitle }) => {
         <div className="block lg:hidden">
           <button
             onClick={() => toggleExpansion(!isExpanded)}
-            className="flex items-center px-3 py-2 border rounded text-gray-100 bg-gray-600 hover:text-gray-100 hover:border-gray-100"
+            className="flex items-center px-3 py-2 border rounded text-gray-700 bg-gray-600 hover:text-gray-700 hover:border-gray-100"
           >
             <svg
               className="fill-current h-3 w-3"
