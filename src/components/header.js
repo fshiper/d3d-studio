@@ -7,11 +7,11 @@ const Header = ({ siteTitle }) => {
   const [isExpanded, toggleExpansion] = useState(false)
 
   return (
-    <header className="bg-gradient-gray-light shadow-md pt-2 pb-1">
+    <header className="bg-gradient-gray-light shadow-md pt-4 pb-2">
       <nav className="flex container w-11/12 items-center justify-between flex-wrap  mx-auto">
         <div className="flex items-center flex-shrink-0 text-gray-700 mr-6">
           <Link to="/" href="#responsive-header">
-            <span className="font-semibold text-lg tracking-tight">
+            <span className="font-semibold text-xl tracking-tight">
               {siteTitle}
             </span>
           </Link>
