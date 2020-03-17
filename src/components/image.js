@@ -14,7 +14,7 @@ import Img from "gatsby-image"
 
 const Image = ({ image, title }) => {
   return (
-    <div className="self-center p-0 m-8" style={{ width: 300 }}>
+    <div className="col-auto p-0 m-0">
       <Img
         className="shadow-lg backdrop-blur opacity-75 filter-grayscale scale-100 transition duration-500 ease-in-out hover:shadow-sm hover:opacity-100 hover:filter-saturate"
         fluid={image}

@@ -12,7 +12,7 @@ const InteriorsPage = ({ data }) => {
     <Layout>
       <SEO title="Interiors" />
       <h2>Interiors</h2>
-      <div className="container mt-4 flex flex-wrap justify-around ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-1 row-auto mt-4">
         {images}
       </div>
     </Layout>
