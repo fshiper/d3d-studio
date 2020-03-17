@@ -4,8 +4,11 @@ body {
   @apply text-gray-700;
 }
 h2 {
-  @apply text-xl;
-  @apply pb-4;
+  @apply text-xl
+   py-4
+   text-center
+   font-semibold
+   capitalize;
 }
 p {
   @apply leading-relaxed;
