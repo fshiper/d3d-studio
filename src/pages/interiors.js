@@ -20,7 +20,7 @@ const InteriorsPage = ({ data }) => {
 }
 export const data = graphql`
   query {
-    allFile(filter: { relativeDirectory: { eq: "interiors" } }) {
+    allFile(filter: { relativeDirectory: { eq: "images/interiors" } }) {
       nodes {
         id
         name
