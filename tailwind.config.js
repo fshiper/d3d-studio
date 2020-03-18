@@ -24,7 +24,8 @@ module.exports = {
       grayscale: "grayscale(1)",
       invert: "invert(1)",
       sepia: "sepia(1)",
-      saturate: "saturate(1.1)",
+      desaturate: "saturate(0.3)",
+      saturate: "saturate(1.3)",
       scale: "scale(1.1)",
     },
     backdropFilter: {
