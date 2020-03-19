@@ -2,22 +2,27 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Image from "../components/image"
+import "react-responsive-carousel/lib/styles/carousel.min.css"
+import { Carousel } from "react-responsive-carousel"
 
 export default ({ data }) => {
-  const post = data.markdownRemark
+  const project = data.markdownRemark
   const images = data.allFile.nodes.map(node => (
-    <Image key={node.id} image={node.childImageSharp.fluid} title={node.name} />
+    <img src={node.childImageSharp.fluid.src} />
   ))
+
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} description={post.excerpt} />
-      <div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-1 row-auto mt-4">
+      <SEO title={project.frontmatter.title} description={project.excerpt} />
+      <div className="w-10/12 mx-auto">
+        <Carousel showIndicators={false} emulateTouch>
           {images}
-        </div>
-        <h2>{post.frontmatter.title}</h2>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        </Carousel>
+        <h3 className="text-lg font-medium">
+          {project.frontmatter.title},{" "}
+          <span className="italic">{project.frontmatter.date}</span>
+        </h3>
+        <div dangerouslySetInnerHTML={{ __html: project.html }} />
       </div>
     </Layout>
   )
@@ -36,7 +41,7 @@ export const query = graphql`
         name
         publicURL
         childImageSharp {
-          fluid(toFormat: WEBP, maxWidth: 500, maxHeight: 400) {
+          fluid(maxWidth: 1280, maxHeight: 1024) {
             ...GatsbyImageSharpFluid
           }
         }

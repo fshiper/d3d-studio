@@ -1,18 +1,24 @@
 import React from "react"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Image from "../components/image"
 
 const InteriorsPage = ({ data }) => {
   const images = data.allFile.nodes.map(node => (
-    <Image key={node.id} image={node.childImageSharp.fluid} title={node.name} />
+    <Link to={`/projects/interiors/${node.name}`}>
+      <Image
+        key={node.id}
+        image={node.childImageSharp.fluid}
+        title={node.name}
+      />
+    </Link>
   ))
   return (
     <Layout>
       <SEO title="Interiors" />
       <h2>Interiors</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-1 row-auto mt-4">
+      <div className="w-10/12 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-1 row-auto mt-4">
         {images}
       </div>
     </Layout>
