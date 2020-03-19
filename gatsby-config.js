@@ -32,9 +32,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
-        printRejected: false,
-        develop: false,
+        printRejected: true,
+        develop: true,
         tailwind: true,
+        ignore: ["react-responsive-carousel/lib/styles/carousel.min.css"],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

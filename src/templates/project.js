@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
+
 import { Carousel } from "react-responsive-carousel"
 
 export default ({ data }) => {
@@ -18,8 +19,8 @@ export default ({ data }) => {
         <Carousel showIndicators={false} emulateTouch>
           {images}
         </Carousel>
-        <h3 className="text-lg font-medium">
-          {project.frontmatter.title},{" "}
+        <h3 className="text-lg ">
+          <span className="font-medium">{project.frontmatter.title}, </span>
           <span className="italic">{project.frontmatter.date}</span>
         </h3>
         <div dangerouslySetInnerHTML={{ __html: project.html }} />
