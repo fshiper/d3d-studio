@@ -2,7 +2,6 @@ import React from "react"
 import Img from "gatsby-image"
 
 const Image = ({ image, title }) => {
-  console.log(image.src)
   return (
     <div className="col-auto p-0 m-0">
       <Img

@@ -9,14 +9,19 @@ import { Carousel } from "react-responsive-carousel"
 export default ({ data }) => {
   const project = data.markdownRemark
   const images = data.allFile.nodes.map(node => (
-    <img src={node.childImageSharp.fluid.src} />
+    <img alt={node.name} src={node.childImageSharp.fluid.src} />
   ))
 
   return (
     <Layout>
       <SEO title={project.frontmatter.title} description={project.excerpt} />
       <div className="w-10/12 mx-auto">
-        <Carousel showIndicators={false} emulateTouch>
+        <Carousel
+          showIndicators={false}
+          infiniteLoop
+          useKeyboardArrows
+          emulateTouch
+        >
           {images}
         </Carousel>
         <h3 className="text-lg ">
