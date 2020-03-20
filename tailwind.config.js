@@ -3,6 +3,12 @@ const defaultTheme = require("tailwindcss/defaultTheme")
 
 module.exports = {
   theme: {
+    borderWidth: {
+      default: "1px",
+      "0": "0",
+      "2": "2px",
+      "4": "4px",
+    },
     gradients: theme => ({
       "gray-light": [theme("colors.gray.200"), theme("colors.gray.100")],
       // ...

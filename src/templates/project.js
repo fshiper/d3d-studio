@@ -9,9 +9,8 @@ import { Carousel } from "react-responsive-carousel"
 export default ({ data }) => {
   const project = data.markdownRemark
   const images = data.allFile.nodes.map(node => (
-    <img alt={node.name} src={node.childImageSharp.fluid.src} />
+    <img key={node.id} alt={node.name} src={node.childImageSharp.fluid.src} />
   ))
-
   return (
     <Layout>
       <SEO title={project.frontmatter.title} description={project.excerpt} />
@@ -24,11 +23,20 @@ export default ({ data }) => {
         >
           {images}
         </Carousel>
-        <h3 className="text-lg ">
-          <span className="font-medium">{project.frontmatter.title}, </span>
-          <span className="italic">{project.frontmatter.date}</span>
-        </h3>
-        <div dangerouslySetInnerHTML={{ __html: project.html }} />
+        <article>
+          <h3 className="border-b-1 border-gray-500 my-2 py-1">
+            <span className="text-lg font-medium">
+              {project.frontmatter.title}
+            </span>
+            <span className="italic float-right">
+              {project.frontmatter.date}
+            </span>
+          </h3>
+          <div
+            className="pt-2"
+            dangerouslySetInnerHTML={{ __html: project.html }}
+          />
+        </article>
       </div>
     </Layout>
   )
@@ -57,7 +65,7 @@ export const query = graphql`
       html
       frontmatter {
         title
-        date
+        date(locale: "PL", formatString: "MMMM, YYYY")
       }
     }
   }

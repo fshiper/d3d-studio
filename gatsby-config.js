@@ -33,7 +33,7 @@ module.exports = {
       resolve: `gatsby-plugin-purgecss`,
       options: {
         printRejected: true,
-        develop: true,
+        develop: false,
         tailwind: true,
         ignore: ["react-responsive-carousel/lib/styles/carousel.min.css"],
       },

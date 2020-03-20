@@ -11,7 +11,8 @@ h2 {
    capitalize;
 }
 p {
-  @apply leading-relaxed;
+  @apply leading-relaxed
+  antialiased;
 }
 
 @tailwind components;

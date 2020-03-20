@@ -6,7 +6,7 @@ import Image from "../components/image"
 
 const InteriorsPage = ({ data }) => {
   const images = data.allFile.nodes.map(node => (
-    <Link to={`/projects/interiors/${node.name}`}>
+    <Link key={node.id} to={`/projects/interiors/${node.name}`}>
       <Image
         key={node.id}
         image={node.childImageSharp.fluid}
