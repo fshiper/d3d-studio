@@ -41,6 +41,7 @@ module.exports = {
           "carousel-slider",
           "thumb",
           "selected",
+          "thumbs",
           "animated",
         ],
         ignore: ["react-responsive-carousel/lib/styles/carousel.min.css"],
