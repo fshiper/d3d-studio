@@ -12,7 +12,7 @@ const Header = ({ siteTitle }) => {
       <nav className="flex container w-11/12 items-center justify-between flex-wrap  mx-auto">
         <div className="flex items-center flex-shrink-0 text-gray-700 mr-6">
           <Link to="/" href="#responsive-header">
-            <Logo />
+            {/* <Logo className="w-20 h-20 inline-block" /> */}
             <span className="font-semibold text-xl tracking-tight">
               {siteTitle}
             </span>
