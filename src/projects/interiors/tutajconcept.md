@@ -1,5 +1,6 @@
 ---
 title: "Visualizations for Tutajconcept design studio"
+client: "Tutajconcept"
 date: "2019-05-07"
 ---
 

@@ -8,7 +8,7 @@ const Header = ({ siteTitle }) => {
   const [isExpanded, toggleExpansion] = useState(false)
 
   return (
-    <header className="bg-gradient-gray-light shadow-md pt-4 pb-2 mb-8">
+    <header className="bg-gradient-gray-light shadow-md pt-4 pb-2">
       <nav className="flex container w-11/12 items-center justify-between flex-wrap  mx-auto">
         <div className="flex items-center flex-shrink-0 text-gray-700 mr-6">
           <Link to="/" href="#responsive-header">
@@ -39,11 +39,11 @@ const Header = ({ siteTitle }) => {
           } w-full block flex-grow lg:flex lg:items-center lg:w-auto`}
         >
           <div className="lg:flex lg:text-md lg:flex-grow justify-end">
-            <ListLink to="/interiors/">Interiors</ListLink>
-            <ListLink to="/architecture/">Architecture</ListLink>
+            <ListLink to="/interiors/">Wnętrza</ListLink>
+            <ListLink to="/architecture/">Architektura</ListLink>
             <ListLink to="/panoramas/">360°</ListLink>
-            <ListLink to="/about/">About</ListLink>
-            <ListLink to="/contact/">Contact</ListLink>
+            <ListLink to="/about/">O nas</ListLink>
+            <ListLink to="/contact/">Kontakt</ListLink>
           </div>
         </div>
       </nav>

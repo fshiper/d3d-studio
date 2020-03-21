@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 const ContactPage = () => (
   <Layout>
     <SEO title="Contact" />
-    <h2>Contact</h2>
+    <h2>Zapraszamy do kontaktu</h2>
     <p>
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       Lorem Ipsum has been the industry's standard dummy text ever since the

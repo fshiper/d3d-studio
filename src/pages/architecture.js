@@ -16,8 +16,8 @@ const ArchitecturePage = ({ data }) => {
   ))
   return (
     <Layout>
-      <SEO title="Architecture" />
-      <h2>Architecture [{data.allFile.totalCount}]</h2>
+      <SEO title="Architektura" />
+      <h2>Architektura</h2>
       <div className="w-10/12 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-1 row-auto mt-4">
         {images}
       </div>

@@ -1,5 +1,6 @@
 ---
 title: "New test project for interiors"
+client: "new-project"
 date: "2020-03-07"
 ---
 

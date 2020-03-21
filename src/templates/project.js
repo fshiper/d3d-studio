@@ -14,7 +14,11 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title={project.frontmatter.title} description={project.excerpt} />
-      <div className="w-10/12 mx-auto">
+      <h2>
+        Realizacja dla:{" "}
+        <span className="italic">{project.frontmatter.client}</span>
+      </h2>
+      <div className="w-8/12 mx-auto">
         <Carousel
           showIndicators={false}
           infiniteLoop
@@ -24,7 +28,7 @@ export default ({ data }) => {
           {images}
         </Carousel>
       </div>
-      <article>
+      {/* <article>
         <h3>
           {project.frontmatter.title}
           <span className="text-md italic float-right">
@@ -35,7 +39,7 @@ export default ({ data }) => {
           className="pt-2"
           dangerouslySetInnerHTML={{ __html: project.html }}
         />
-      </article>
+      </article> */}
     </Layout>
   )
 }
@@ -63,6 +67,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        client
         date(locale: "PL", formatString: "MMMM, YYYY")
       }
     }

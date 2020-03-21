@@ -16,8 +16,8 @@ const PanoramasPage = () => {
 
   return (
     <Layout>
-      <SEO title="Panoramas 360°" />
-      <h2>360°</h2>
+      <SEO title="Panoramy 360°" />
+      <h2>Panoramy 360°</h2>
       <div>
         <ReactPannellum
           id="1"
