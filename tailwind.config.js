@@ -3,9 +3,14 @@ const defaultTheme = require("tailwindcss/defaultTheme")
 
 module.exports = {
   theme: {
+    borderWidth: {
+      default: "1px",
+      "0": "0",
+      "1": "1px",
+      "2": "2px",
+      "4": "4px",
+    },
     gradients: theme => ({
-      "blue-green": [theme("colors.blue.500"), theme("colors.green.500")],
-      "purple-blue": [theme("colors.purple.500"), theme("colors.blue.500")],
       "gray-light": [theme("colors.gray.200"), theme("colors.gray.100")],
       // ...
     }),
@@ -20,9 +25,26 @@ module.exports = {
         sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
       },
     },
+    filter: {
+      // defaults to {}
+      none: "none",
+      grayscale: "grayscale(1)",
+      invert: "invert(1)",
+      sepia: "sepia(1)",
+      desaturate: "saturate(0.3)",
+      saturate: "saturate(1.3)",
+      scale: "scale(1.1)",
+    },
+    backdropFilter: {
+      // defaults to {}
+      none: "none",
+      blur: "blur(8px)",
+    },
   },
   variants: {
     gradients: ["responsive", "hover"],
+    filter: ["responsive", "hover"],
+    backdropFilter: ["responsive", "hover"],
   },
-  plugins: [require("./plugins/gradients")],
+  plugins: [require("./plugins/gradients"), require("tailwindcss-filters")],
 }

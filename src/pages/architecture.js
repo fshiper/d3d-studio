@@ -2,23 +2,13 @@ import React from "react"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 
-const ArchitecturePage = () => (
-  <Layout>
-    <SEO title="Architecture" />
-    <h2>Architecture</h2>
-    <p>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the
-      1500s, when an unknown printer took a galley of type and scrambled it to
-      make a type specimen book. It has survived not only five centuries, but
-      also the leap into electronic typesetting, remaining essentially
-      unchanged. It was popularised in the 1960s with the release of Letraset
-      sheets containing Lorem Ipsum passages, and more recently with desktop
-      publishing software like Aldus PageMaker including versions of Lorem
-      Ipsum.
-    </p>
-    <img src="https://source.unsplash.com/random/250x250" alt="" />
-  </Layout>
-)
+const ArchitecturePage = () => {
+  return (
+    <Layout>
+      <SEO title="Architecture" />
+      <h2>Architecture</h2>
+    </Layout>
+  )
+}
 
 export default ArchitecturePage

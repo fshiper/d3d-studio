@@ -9,10 +9,11 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `src`,
+        path: `${__dirname}/src`,
       },
     },
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
@@ -25,15 +26,16 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: "src/images/android-chrome-512x512.png",
+        icon: "src/images/logo.png",
       },
     },
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
-        printRejected: false,
+        printRejected: true,
         develop: false,
         tailwind: true,
+        ignore: ["react-responsive-carousel/lib/styles/carousel.min.css"],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

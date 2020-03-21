@@ -1,24 +1,44 @@
 import React from "react"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
+import { Link, graphql } from "gatsby"
+import Image from "../components/image"
 
-const InteriorsPage = () => (
-  <Layout>
-    <SEO title="Interiors" />
-    <h2>Interiors</h2>
-    <p>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the
-      1500s, when an unknown printer took a galley of type and scrambled it to
-      make a type specimen book. It has survived not only five centuries, but
-      also the leap into electronic typesetting, remaining essentially
-      unchanged. It was popularised in the 1960s with the release of Letraset
-      sheets containing Lorem Ipsum passages, and more recently with desktop
-      publishing software like Aldus PageMaker including versions of Lorem
-      Ipsum.
-    </p>
-    <img src="https://source.unsplash.com/random/250x250" alt="" />
-  </Layout>
-)
-
+const InteriorsPage = ({ data }) => {
+  const images = data.allFile.nodes.map(node => (
+    <Link key={node.id} to={`/projects/interiors/${node.name}`}>
+      <Image
+        key={node.id}
+        image={node.childImageSharp.fluid}
+        title={node.name}
+      />
+    </Link>
+  ))
+  return (
+    <Layout>
+      <SEO title="Interiors" />
+      <h2>Interiors [{data.allFile.totalCount}]</h2>
+      <div className="w-10/12 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-1 row-auto mt-4">
+        {images}
+      </div>
+    </Layout>
+  )
+}
+export const data = graphql`
+  query {
+    allFile(filter: { relativeDirectory: { eq: "images/interiors" } }) {
+      nodes {
+        id
+        name
+        publicURL
+        childImageSharp {
+          fluid(toFormat: WEBP, maxWidth: 500, maxHeight: 400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      totalCount
+    }
+  }
+`
 export default InteriorsPage
