@@ -23,21 +23,19 @@ export default ({ data }) => {
         >
           {images}
         </Carousel>
-        <article>
-          <h3 className="border-b-1 border-gray-500 my-2 py-1">
-            <span className="text-lg font-medium">
-              {project.frontmatter.title}
-            </span>
-            <span className="italic float-right">
-              {project.frontmatter.date}
-            </span>
-          </h3>
-          <div
-            className="pt-2"
-            dangerouslySetInnerHTML={{ __html: project.html }}
-          />
-        </article>
       </div>
+      <article>
+        <h3>
+          {project.frontmatter.title}
+          <span className="text-md italic float-right">
+            {project.frontmatter.date}
+          </span>
+        </h3>
+        <div
+          className="pt-2"
+          dangerouslySetInnerHTML={{ __html: project.html }}
+        />
+      </article>
     </Layout>
   )
 }
