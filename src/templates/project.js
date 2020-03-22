@@ -15,12 +15,18 @@ export default ({ data }) => {
     <Layout>
       <SEO title={project.frontmatter.title} description={project.excerpt} />
       <div className="w-11/12 mx-auto">
-        <h2>
-          {/* Realizacja dla{" "} */}
-          <span className="italic font-medium">
-            {project.frontmatter.client}
-          </span>
-        </h2>
+        <article className="border-b-1 border-gray-500 mb-4">
+          <h2>
+            {/* Realizacja dla{" "} */}
+            <span className="italic font-medium">
+              {project.frontmatter.client}
+            </span>
+          </h2>
+          <div
+            className="text-sm italic"
+            dangerouslySetInnerHTML={{ __html: project.html }}
+          />
+        </article>
         <Carousel
           showIndicators={false}
           infiniteLoop

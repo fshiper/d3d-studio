@@ -8,20 +8,15 @@ body {
 h2 {
   @apply text-base
     pt-6
-    pb-2
     mx-auto
     pl-8
-    mb-6
-    font-normal
-    border-b-1 border-gray-500;
+    font-normal;
 }
 h3 {
   @apply border-b-1 border-gray-500 my-2 py-1 text-lg font-medium;
 }
 p {
-  @apply leading-loose
-    py-4
-    antialiased;
+  @apply pl-8 leading-loose;
 }
 /* .thumb {
   @apply rounded-sm
