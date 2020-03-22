@@ -14,11 +14,13 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title={project.frontmatter.title} description={project.excerpt} />
-      <h2>
-        Realizacja dla:{" "}
-        <span className="italic">{project.frontmatter.client}</span>
-      </h2>
       <div className="w-8/12 mx-auto">
+        <h2>
+          {/* Realizacja dla{" "} */}
+          <span className="italic font-medium">
+            {project.frontmatter.client}
+          </span>
+        </h2>
         <Carousel
           showIndicators={false}
           infiniteLoop
@@ -66,9 +68,7 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
-        title
         client
-        date(locale: "PL", formatString: "MMMM, YYYY")
       }
     }
   }
