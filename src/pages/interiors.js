@@ -32,7 +32,7 @@ export const data = graphql`
         name
         publicURL
         childImageSharp {
-          fluid(toFormat: WEBP, maxWidth: 450, maxHeight: 300) {
+          fluid(maxWidth: 450, maxHeight: 300) {
             ...GatsbyImageSharpFluid
           }
         }

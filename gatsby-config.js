@@ -15,7 +15,14 @@ module.exports = {
     },
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        useMozJpeg: true,
+        stripMetadata: true,
+        defaultQuality: 75,
+      },
+    },
     `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -32,7 +39,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
-        printRejected: true,
+        printRejected: false,
         develop: false,
         tailwind: true,
         whitelist: [

@@ -1,3 +1,3 @@
----
-client: "El¿bieta Kubera-M¹dry, Justyna Sioch-S³omiñska"
+ï»¿---
+client: "ElÅ¼bieta Kubera-MÄ…dry, Justyna Sioch-SÅ‚omiÅ„ska"
 ---

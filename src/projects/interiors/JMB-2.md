@@ -1,3 +1,3 @@
----
-client: "Joanna Bortkiewicz, Justyna Sioch-S³omiñska"
+ï»¿---
+client: "Joanna Bortkiewicz, Justyna Sioch-SÅ‚omiÅ„ska"
 ---

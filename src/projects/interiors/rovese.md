@@ -1,5 +1,6 @@
----
+ï»¿---
 client: "Rovese (Cersanit)"
 ---
-Przyk³adowe aran¿acje wnêtrz z wykorzytaniem p³ytek ceramicznych Rovese.
-Projekty ³azienek - El¿bietê Kubera-M¹dry. 
+
+PrzykÅ‚adowe aranÅ¼acje wnÄ™trz z wykorzytaniem pÅ‚ytek ceramicznych Rovese.
+Projekty Å‚azienek - ElÅ¼bietÄ™ Kubera-MÄ…dry.
