@@ -11,17 +11,19 @@ export default ({ data }) => {
   const images = data.allFile.nodes.map(node => (
     <img key={node.id} alt={node.name} src={node.childImageSharp.fluid.src} />
   ))
+  const statusFormatter = (current, total) => `${current} / ${total}`
+
   return (
     <Layout>
       <SEO title={project.frontmatter.title} description={project.excerpt} />
       <div className="w-11/12 mx-auto">
-        <article className="border-b-1 border-gray-500 mb-4">
-          <h2>
+        <article className="border-b-1 border-pink-500 mb-4">
+          <h3>
             {/* Realizacja dla{" "} */}
             <span className="italic font-medium">
               {project.frontmatter.client}
             </span>
-          </h2>
+          </h3>
           <div
             className="text-sm italic"
             dangerouslySetInnerHTML={{ __html: project.html }}
@@ -32,6 +34,8 @@ export default ({ data }) => {
           infiniteLoop
           useKeyboardArrows
           emulateTouch
+          statusFormatter={statusFormatter}
+          transitionTime={700}
         >
           {images}
         </Carousel>
@@ -66,7 +70,12 @@ export const query = graphql`
         name
         publicURL
         childImageSharp {
-          fluid(maxWidth: 1200, maxHeight: 800) {
+          fluid(
+            maxWidth: 1200
+            maxHeight: 800
+            fit: CONTAIN
+            background: "rgba(247, 250, 252, 1)"
+          ) {
             ...GatsbyImageSharpFluid
           }
         }
