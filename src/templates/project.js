@@ -14,7 +14,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title={project.frontmatter.title} description={project.excerpt} />
-      <div className="w-8/12 mx-auto">
+      <div className="w-11/12 mx-auto">
         <h2>
           {/* Realizacja dla{" "} */}
           <span className="italic font-medium">
@@ -53,6 +53,7 @@ export const query = graphql`
         relativeDirectory: { eq: $imagePath }
         childImageSharp: { internal: { type: { eq: "ImageSharp" } } }
       }
+      sort: { fields: name, order: ASC }
     ) {
       nodes {
         id
