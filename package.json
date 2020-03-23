@@ -23,6 +23,7 @@
     "react-helmet": "^5.2.1",
     "react-pannellum": "^0.1.10",
     "react-responsive-carousel": "^3.1.51",
+    "typeface-clear-sans": "0.0.44",
     "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {

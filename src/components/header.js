@@ -38,7 +38,7 @@ const Header = ({ siteTitle }) => {
             isExpanded ? `block` : `hidden`
           } w-full block flex-grow lg:flex lg:items-center lg:w-auto`}
         >
-          <div className="lg:flex lg:text-md lg:flex-grow justify-end">
+          <div className="lg:flex lg:text-lg lg:flex-grow justify-end">
             <ListLink to="/interiors/">Wnętrza</ListLink>
             <ListLink to="/architecture/">Architektura</ListLink>
             <ListLink to="/panoramas/">360°</ListLink>

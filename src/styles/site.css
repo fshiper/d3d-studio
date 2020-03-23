@@ -6,7 +6,7 @@ body {
   @apply text-gray-700;
 }
 h2 {
-  @apply text-base
+  @apply text-lg
     pt-6
     mx-auto
     border-b-1 border-pink-500 mb-4
@@ -14,7 +14,7 @@ h2 {
     font-normal;
 }
 h3 {
-  @apply text-base
+  @apply text-lg
   pt-6
   mx-auto
   pl-8

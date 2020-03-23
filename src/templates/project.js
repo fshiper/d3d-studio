@@ -12,14 +12,12 @@ export default ({ data }) => {
     <img key={node.id} alt={node.name} src={node.childImageSharp.fluid.src} />
   ))
   const statusFormatter = (current, total) => `${current} / ${total}`
-
   return (
     <Layout>
-      <SEO title={project.frontmatter.title} description={project.excerpt} />
+      <SEO title={project.frontmatter.client} description={project.excerpt} />
       <div className="w-11/12 mx-auto">
         <article className="border-b-1 border-pink-500 mb-4">
           <h3>
-            {/* Realizacja dla{" "} */}
             <span className="italic font-medium">
               {project.frontmatter.client}
             </span>
@@ -35,7 +33,6 @@ export default ({ data }) => {
           useKeyboardArrows
           emulateTouch
           statusFormatter={statusFormatter}
-          transitionTime={700}
         >
           {images}
         </Carousel>
@@ -70,6 +67,10 @@ export const query = graphql`
         name
         publicURL
         childImageSharp {
+          sizes {
+            presentationHeight
+            presentationWidth
+          }
           fluid(
             maxWidth: 1200
             maxHeight: 800

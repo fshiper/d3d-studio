@@ -6,4 +6,5 @@
 
 // You can delete this file if you're not using it
 import "./src/styles/site.css"
-require("typeface-montserrat")
+require("typeface-clear-sans")
+// require("typeface-montserrat")

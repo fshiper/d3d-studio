@@ -22,7 +22,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
+        sans: ["Clear Sans", ...defaultTheme.fontFamily.sans],
       },
     },
     filter: {
