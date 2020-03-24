@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import "react-responsive-carousel/lib/styles/carousel.min.css"
+import "../styles/carousel.css"
 
 import { Carousel } from "react-responsive-carousel"
 
@@ -16,7 +16,7 @@ export default ({ data }) => {
     <Layout>
       <SEO title={project.frontmatter.client} description={project.excerpt} />
       <div className="w-11/12 mx-auto">
-        <article className="border-b-1 border-pink-500 mb-4">
+        <div className="border-b-1 border-pink-500 mb-4">
           <h3>
             <span className="italic font-medium">
               {project.frontmatter.client}
@@ -26,10 +26,10 @@ export default ({ data }) => {
             className="text-sm italic"
             dangerouslySetInnerHTML={{ __html: project.html }}
           />
-        </article>
+        </div>
         <Carousel
           showIndicators={false}
-          infiniteLoop
+          // infiniteLoop
           useKeyboardArrows
           emulateTouch
           statusFormatter={statusFormatter}

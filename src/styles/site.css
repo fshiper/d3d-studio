@@ -1,17 +1,16 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
 body {
   @apply bg-gray-100;
   @apply text-gray-700;
 }
 h2 {
   @apply text-lg
-    pt-6
-    mx-auto
-    border-b-1 border-pink-500 mb-4
-    pl-8
-    font-normal;
+  pt-6
+  mx-auto
+  border-b-1 border-pink-500 mb-4
+  pl-8
+  font-normal;
 }
 h3 {
   @apply text-lg
@@ -46,3 +45,4 @@ p {
 .pnlm-container {
   @apply rounded shadow-md !important;
 }
+@tailwind utilities;
