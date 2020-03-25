@@ -8,7 +8,7 @@ h2 {
   @apply text-lg
   pt-6
   mx-auto
-  border-b-1 border-pink-500 mb-4
+  border-b-1 border-teal-500 mb-4
   pl-8
   font-normal;
 }
