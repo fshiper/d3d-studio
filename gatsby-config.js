@@ -18,9 +18,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
-        // useMozJpeg: true,
+        useMozJpeg: false,
         stripMetadata: true,
-        defaultQuality: 50,
+        defaultQuality: 75,
       },
     },
     `gatsby-plugin-postcss`,

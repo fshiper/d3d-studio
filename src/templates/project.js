@@ -15,7 +15,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title={project.frontmatter.client} description={project.excerpt} />
-      <div className="w-11/12 mx-auto">
+      <div className="mx-auto">
         <div className="border-b-1 border-pink-500 mb-4">
           <h3>
             <span className="italic font-medium">
