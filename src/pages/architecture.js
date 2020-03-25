@@ -6,7 +6,7 @@ import Image from "../components/image"
 
 const ArchitecturePage = ({ data }) => {
   const images = data.allFile.nodes.map(node => (
-    <Link key={node.id} to={`/projects/architecture/${node.name}`}>
+    <Link key={node.id} to={`/architecture/${node.name}`}>
       <Image
         key={node.id}
         image={node.childImageSharp.fluid}

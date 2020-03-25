@@ -12,15 +12,26 @@ export default ({ data }) => {
     <img key={node.id} alt={node.name} src={node.childImageSharp.fluid.src} />
   ))
   const statusFormatter = (current, total) => `${current} / ${total}`
+
+  const pagePath = () => {
+    switch (project.fields.slug.split("/")[1]) {
+      case "interiors":
+        return "Wnętrza"
+      case "architecture":
+        return "Architektura"
+      default:
+        return ""
+    }
+  }
   return (
     <Layout>
       <SEO title={project.frontmatter.client} description={project.excerpt} />
       <div className="mx-auto">
-        <div className="border-b-1 border-teal-500 mb-4">
+        <div className="border-b-1 border-teal-500 pb-2 mb-6">
           <h3>
-            <span className="italic font-medium">
-              {project.frontmatter.client}
-            </span>
+            <span className="font-medium text-teal-500">{pagePath()}</span>
+            {"  >  "}
+            {project.frontmatter.client}
           </h3>
           <div
             className="text-sm italic"
@@ -86,6 +97,9 @@ export const query = graphql`
       html
       frontmatter {
         client
+      }
+      fields {
+        slug
       }
     }
   }

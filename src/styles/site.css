@@ -7,17 +7,14 @@ body {
 h2 {
   @apply text-lg
   pt-6
-  mx-auto
-  border-b-1 border-teal-500 mb-4
+  border-b-1 border-teal-500 mb-6
   pl-8
-  font-normal;
+  pb-2;
 }
 h3 {
   @apply text-lg
   pt-6
-  mx-auto
-  pl-8
-  font-normal;
+  pl-8;
 }
 p {
   @apply pl-8 leading-loose;
