@@ -182,7 +182,7 @@
   margin: 0;
   position: relative;
   text-align: center;
-  background: #000;
+  /* background: #000; */
 }
 .carousel .slide img {
   width: 100%;
