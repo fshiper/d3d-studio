@@ -38,7 +38,7 @@ const MyTextArea = ({ label, ...props }) => {
       >
         {label}
       </label>
-      <textarea
+      <textarea rows="8"
         className="appearance-none bg-transparent border-1 border-teal-500 w-8/12 text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
         {...field}
         {...props}
