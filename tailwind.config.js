@@ -7,7 +7,7 @@ module.exports = {
       sm: "320px",
       md: "480px",
       lg: "640px",
-      xl: "860px",
+      xl: "780px",
     },
     borderWidth: {
       default: "1px",
