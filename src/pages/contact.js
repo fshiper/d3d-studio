@@ -2,13 +2,14 @@ import React from "react"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 import { Formik, Form, useField } from "formik"
+import * as Yup from "yup"
 
 const MyTextInput = ({ label, ...props }) => {
   const [field, meta] = useField(props)
   return (
     <div className="relative flex items-center justify-center py-4">
       <label
-        className="text-gray-500 text-xs text-right italic w-4/12 pr-2"
+        className="text-gray-700 text-sm text-right italic w-4/12 pr-2"
         htmlFor={props.id || props.name}
       >
         {label}
@@ -32,7 +33,7 @@ const MyTextArea = ({ label, ...props }) => {
   return (
     <div className="flex items-center justify-center py-2">
       <label
-        className="text-gray-500 text-xs text-right italic w-4/12 pr-2"
+        className="text-gray-700 text-sm text-right italic w-4/12 pr-2"
         htmlFor={props.id || props.name}
       >
         {label}
@@ -48,6 +49,14 @@ const MyTextArea = ({ label, ...props }) => {
     </div>
   )
 }
+const validationSchema = Yup.object({
+  name: Yup.string()
+    .required("Pole wymagane")
+    .max(50),
+  email: Yup.string()
+    .email("Nieprawidłowy adres email")
+    .required("Pole wymagane"),
+})
 
 const ContactPage = () => (
   <Layout>
@@ -56,17 +65,7 @@ const ContactPage = () => (
     <div className="mt-16 w-8/12 mx-auto text-gray-800">
       <Formik
         initialValues={{ name: "", email: "", title: "", message: "" }}
-        validate={values => {
-          const errors = {}
-          if (!values.email) {
-            errors.email = "wymagany adres email"
-          } else if (
-            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-          ) {
-            errors.email = "Niepoprawny adres email"
-          }
-          return errors
-        }}
+        validationSchema={validationSchema}
         onSubmit={(values, { setSubmitting }) => {
           console.log(values)
           setTimeout(() => {
@@ -78,14 +77,14 @@ const ContactPage = () => (
         {({ values, isSubmitting }) => (
           <Form>
             <MyTextInput
-              label="Imię i Nazwisko"
+              label="Imię / Nazwa firmy"
               name="name"
               type="text"
-              placeholder="imię i nazwisko"
+              placeholder="imię / nazwa "
             />
 
             <MyTextInput
-              label="adres email"
+              label="Adres email"
               name="email"
               type="email"
               placeholder="email"
@@ -101,7 +100,7 @@ const ContactPage = () => (
               label="Wiadomość"
               name="message"
               type="textarea"
-              placeholder="Treść wiadomości"
+              placeholder="treść wiadomości"
             />
             <button
               className="shadow bg-teal-500 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-normal py-1 px-4 rounded mt-3 float-right"
