@@ -9,8 +9,8 @@ const PanoramasPage = () => {
     autoRotate: -2,
   }
   const panoStyle = {
-    width: "900px",
-    height: "600px",
+    width: "100%",
+    height: "100%",
     margin: "auto",
   }
 
@@ -18,7 +18,7 @@ const PanoramasPage = () => {
     <Layout>
       <SEO title="Panoramy 360°" />
       <h2>Panoramy 360°</h2>
-      <div>
+      <div className="h-sm md:h-md lg:h-lg xl:h-xl w-11/12 mx-auto">
         <ReactPannellum
           id="1"
           sceneId="firstScene"

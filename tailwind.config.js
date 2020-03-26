@@ -3,6 +3,12 @@ const defaultTheme = require("tailwindcss/defaultTheme")
 
 module.exports = {
   theme: {
+    height: {
+      sm: "320px",
+      md: "480px",
+      lg: "640px",
+      xl: "860px",
+    },
     borderWidth: {
       default: "1px",
       "0": "0",

@@ -19,27 +19,7 @@ h3 {
 p {
   @apply pl-8 leading-loose;
 }
-/* .thumb {
-  @apply rounded-sm
-  opacity-75 filter-desaturate;
-  border: 0px !important;
-  padding: 0px !important;
-  transition: width 0.3s !important;
-}
-.carousel .thumb.selected,
-.carousel .thumb:hover {
-  @apply shadow-md opacity-100 filter-saturate;
-  width: 110px;
-  border: 0px !important;
-  padding: 0px !important;
-}
-.thumbs.animated {
-  @apply flex items-center h-20;
-} */
-/* .carousel.carousel-slider {
-  @apply rounded shadow-md;
-} */
 .pnlm-container {
-  @apply rounded shadow-md !important;
+  @apply rounded shadow-md;
 }
 @tailwind utilities;
