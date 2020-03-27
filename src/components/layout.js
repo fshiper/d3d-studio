@@ -24,13 +24,11 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
-      <div className="flex flex-col min-h-screen w-screen mx-auto">
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <main className="flex-grow container mx-auto w-11/12">{children}</main>
-        <Footer />
-      </div>
-    </>
+    <div className="flex flex-col min-h-screen w-screen mx-auto">
+      <Header siteTitle={data.site.siteMetadata.title} />
+      <main className="flex-grow container mx-auto w-11/12">{children}</main>
+      <Footer />
+    </div>
   )
 }
 

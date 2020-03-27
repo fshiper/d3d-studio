@@ -36,7 +36,7 @@ const Header = ({ siteTitle }) => {
         <div
           className={`${
             isExpanded ? `block` : `hidden`
-          } w-full block flex-grow lg:flex lg:items-center lg:w-auto`}
+            } w-full block flex-grow lg:flex lg:items-center lg:w-auto`}
         >
           <div className="lg:flex lg:text-lg lg:flex-grow justify-end">
             <ListLink to="/interiors/">Wnętrza</ListLink>
