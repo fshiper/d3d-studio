@@ -34,16 +34,16 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: "src/images/logo.png",
-        cache_busting_mode: "none",
+        // cache_busting_mode: "none",
       },
     },
     {
       resolve: `gatsby-plugin-offline`,
       options: {
         precachePages: [`/about/`, `/interiors/`, `/contact/`],
-        workboxConfig: {
-          globPatterns: ["**/*"],
-        },
+        // workboxConfig: {
+        //   globPatterns: ["**/*"],
+        // },
       },
     },
     {
