@@ -7,23 +7,23 @@ import * as Yup from "yup"
 const MyTextInput = ({ label, ...props }) => {
   const [field, meta] = useField(props)
   return (
-    <div className="relative flex items-center justify-center py-4">
+    <div className="flex items-center justify-center ">
       <label
-        className="text-gray-700 text-sm text-right italic w-4/12 pr-2"
+        className="text-right w-4/12 pr-2 transition duration-500 ease-in-out text-gray-700"
         htmlFor={props.id || props.name}
       >
         {label}
       </label>
-      <input
-        className="appearance-none bg-transparent border-b-1 border-teal-500 w-8/12 text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-        {...field}
-        {...props}
-      />
-      {meta.touched && meta.error ? (
-        <span className="absolute inset-x-auto bottom-0 text-red-500 text-xs">
+      <div className="relative w-8/12 pb-6 xs:pt-2 md:pt-6">
+        <input
+          className={`appearance-none bg-transparent border-b-1 transition duration-500 ease-in-out ${meta.touched && meta.error ? "border-red-500" : "border-teal-500"} w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none`}
+          {...field}
+          {...props}
+        />
+        <p className={`absolute left-0 bottom-1 text-red-500 italic text-xs ${meta.touched && meta.error ? "block" : "hidden"}`}>
           {meta.error}
-        </span>
-      ) : null}
+        </p>
+      </div>
     </div>
   )
 }
@@ -31,38 +31,47 @@ const MyTextInput = ({ label, ...props }) => {
 const MyTextArea = ({ label, ...props }) => {
   const [field, meta] = useField(props)
   return (
-    <div className="flex items-center justify-center py-2">
+    <div className="flex items-center justify-center py-6">
       <label
-        className="text-gray-700 text-sm text-right italic w-4/12 pr-2"
+        className="text-right w-4/12 pr-2 transition duration-500 ease-in-out text-gray-700"
         htmlFor={props.id || props.name}
       >
         {label}
       </label>
-      <textarea rows="8"
-        className="appearance-none bg-transparent border-1 border-teal-500 w-8/12 text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-        {...field}
-        {...props}
-      />
-      {meta.touched && meta.error ? (
-        <div className="text-red-500 text-xs">{meta.error}</div>
-      ) : null}
+      <div className="relative w-8/12 ">
+
+        <textarea rows="8"
+          className={`appearance-none rounded bg-transparent border-1 transition duration-500 ease-in-out ${meta.touched && meta.error ? "border-red-500" : "border-teal-500"} w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none`}
+          {...field}
+          {...props}
+        />
+        <p className={`absolute left-0 bottom-1 text-red-500 italic text-xs ${meta.touched && meta.error ? "block" : "hidden"}`}>
+          {meta.error}
+        </p>
+      </div>
     </div>
   )
 }
 const validationSchema = Yup.object({
   name: Yup.string()
-    .required("Pole wymagane")
-    .max(50),
+    .max(50, "*Limit 50 znaków"),
   email: Yup.string()
-    .email("Nieprawidłowy adres email")
-    .required("Pole wymagane"),
+    .email("*Nieprawidłowy adres email")
+    .required("*Wymagane"),
+  title: Yup.string()
+    .required("*Wymagane")
+    .max(30, "*Limit do 50 znaków"),
+  message: Yup.string()
+    .required("*Wymagane")
+    .min(10, "*Minimum 10 znaków")
+    .max(300, "*Limit do 300 znaków"),
 })
 
 const ContactPage = () => (
   <Layout>
     <SEO title="Contact" />
     <h2>Zapraszamy do kontaktu</h2>
-    <div className="mt-16 w-8/12 mx-auto text-gray-800">
+    <div className="xs:mt-2 sm:mt-4 md:mt-8 lg:mt-16 xs:text-xs sm:text-sm md:text-base md:w-8/12 xs:w-10/12 mx-auto text-gray-800">
       <Formik
         initialValues={{ name: "", email: "", title: "", message: "" }}
         validationSchema={validationSchema}
@@ -74,7 +83,7 @@ const ContactPage = () => (
           }, 400)
         }}
       >
-        {({ values, isSubmitting }) => (
+        {({ isSubmitting }) => (
           <Form>
             <MyTextInput
               label="Imię / Nazwa firmy"
@@ -109,7 +118,6 @@ const ContactPage = () => (
             >
               Wyślij
             </button>
-            {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
           </Form>
         )}
       </Formik>
