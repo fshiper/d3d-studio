@@ -70,57 +70,65 @@ const validationSchema = Yup.object({
 const ContactPage = () => (
   <Layout>
     <SEO title="Contact" />
-    <h2>Zapraszamy do kontaktu</h2>
-    <div className="xs:mt-2 sm:mt-4 md:mt-8 lg:mt-16 xs:text-xs sm:text-sm md:text-base md:w-8/12 xs:w-10/12 mx-auto text-gray-800">
-      <Formik
-        initialValues={{ name: "", email: "", title: "", message: "" }}
-        validationSchema={validationSchema}
-        onSubmit={(values, { setSubmitting }) => {
-          console.log(values)
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2))
-            setSubmitting(false)
-          }, 400)
-        }}
-      >
-        {({ isSubmitting }) => (
-          <Form>
-            <MyTextInput
-              label="Imię / Nazwa firmy"
-              name="name"
-              type="text"
-              placeholder="imię / nazwa "
-            />
+    <div className="xs:text-xs sm:text-sm md:text-base md:w-8/12 xs:w-10/12 mx-auto text-gray-800 md:mt-8 lg:mt-16">
+      <h2 className="">Zapraszamy do kontaktu</h2>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the
+        1500s, when an unknown printer took a galley of type and scrambled it to
+        make a type specimen book.
+    </p>
+      <div className="xs:mt-2 sm:mt-4 md:mt-8 lg:mt-16">
+        <Formik
+          initialValues={{ name: "", email: "", title: "", message: "" }}
+          validationSchema={validationSchema}
+          onSubmit={(values, { setSubmitting }) => {
+            console.log(values)
+            setTimeout(() => {
+              alert(JSON.stringify(values, null, 2))
+              setSubmitting(false)
+            }, 400)
+          }}
+        >
+          {({ isSubmitting }) => (
+            <Form>
+              <MyTextInput
+                label="Imię / Nazwa firmy"
+                name="name"
+                type="text"
+                placeholder="imię / nazwa "
+              />
 
-            <MyTextInput
-              label="Adres email"
-              name="email"
-              type="email"
-              placeholder="email"
-            />
+              <MyTextInput
+                label="Adres email"
+                name="email"
+                type="email"
+                placeholder="email"
+              />
 
-            <MyTextInput
-              label="Tytuł"
-              name="title"
-              type="text"
-              placeholder="tytuł wiadomości"
-            />
-            <MyTextArea
-              label="Wiadomość"
-              name="message"
-              type="textarea"
-              placeholder="treść wiadomości"
-            />
-            <button
-              className="shadow bg-teal-500 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-normal py-1 px-4 rounded mt-3 float-right"
-              type="submit"
-              disabled={isSubmitting}
-            >
-              Wyślij
+              <MyTextInput
+                label="Tytuł"
+                name="title"
+                type="text"
+                placeholder="tytuł wiadomości"
+              />
+              <MyTextArea
+                label="Wiadomość"
+                name="message"
+                type="textarea"
+                placeholder="treść wiadomości"
+              />
+              <button
+                className="shadow bg-teal-500 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-normal py-1 px-4 rounded mt-3 float-right"
+                type="submit"
+                disabled={isSubmitting}
+              >
+                Wyślij
             </button>
-          </Form>
-        )}
-      </Formik>
+            </Form>
+          )}
+        </Formik>
+      </div>
     </div>
   </Layout>
 )
