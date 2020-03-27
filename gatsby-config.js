@@ -27,13 +27,23 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Wisualization Studio D3D`,
+        short_name: `Studio D3D`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: "src/images/logo.png",
+        cache_busting_mode: "none",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/about/`, `/interiors/`, `/contact/`],
+        workboxConfig: {
+          globPatterns: ["**/*"],
+        },
       },
     },
     {
