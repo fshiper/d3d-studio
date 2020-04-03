@@ -27,7 +27,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Wisualization Studio D3D`,
+        name: `Visualization Studio D3D`,
         short_name: `Studio D3D`,
         start_url: `/`,
         background_color: `#663399`,

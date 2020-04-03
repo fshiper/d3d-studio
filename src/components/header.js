@@ -2,7 +2,6 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
 import ListLink from "./listLink"
-import Logo from "./logo"
 
 const Header = ({ siteTitle }) => {
   const [isExpanded, toggleExpansion] = useState(false)
